@@ -47,6 +47,10 @@ class update():
 
 	# Handles all the input for the renderer
 	def handle_input(self):
+		# Calling this resets the value preventing jumping when clicking
+		# anywhere on the window
+		pygame.mouse.get_rel()
+
 		for event in pygame.event.get():
 			
 			if event.type == pygame.KEYDOWN:
