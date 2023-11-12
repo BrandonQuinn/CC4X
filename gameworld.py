@@ -6,8 +6,8 @@ class gameworld():
     def init(self):
         pass
 
-    def update(self):
-        pass
+    def update(self, clock, properties):
+        self.map.update(clock, properties)
 
-    def draw(self, screen, properties):
-        self.map.draw(screen, properties)
+    def draw(self, screen):
+        self.map.draw(screen)

@@ -32,17 +32,20 @@ class update():
 	gameworld = gameworld()
 	window = window();
 	draw_props = drawing_properties()
+	clock = pygame.time.Clock()
 
 	# Update the game
 	def update(self):
 		while self.running:
 			self.handle_input()
+			self.gameworld.update(self.clock, self.draw_props)
 			self.draw()
+			self.clock.tick(60)
 		
 	# draw the game
 	def draw(self):
 		self.window.get_screen().fill(self.window.get_bg_colour())
-		self.gameworld.draw(self.window.get_screen(), self.draw_props)
+		self.gameworld.draw(self.window.get_screen())
 		pygame.display.flip()
 
 	# Handles all the input for the renderer
@@ -50,6 +53,7 @@ class update():
 		# Calling this resets the value preventing jumping when clicking
 		# anywhere on the window
 		pygame.mouse.get_rel()
+		self.draw_props.offset = (0, 0)
 
 		for event in pygame.event.get():
 			
