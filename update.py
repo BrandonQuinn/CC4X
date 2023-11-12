@@ -2,6 +2,12 @@ import pygame
 
 from gameworld import gameworld
 
+# General properties that can be passed down through each draw method of
+# each object drawn in the game world
+class drawing_properties():
+	 # How far to move everything in the game based on mouse dragging
+	offset = (0, 0)
+
 # Controls the configuration of the window
 class window():
 	window_title = "CC4X"
@@ -17,11 +23,15 @@ class window():
 	def get_screen(self):
 		return self.screen
 
+	def get_bg_colour(self):
+		return self.background_colour
+
 # Controls the main functions for updating game logic
 class update():
 	running = True
 	gameworld = gameworld()
 	window = window();
+	draw_props = drawing_properties()
 
 	# Update the game
 	def update(self):
@@ -31,7 +41,8 @@ class update():
 		
 	# draw the game
 	def draw(self):
-		self.gameworld.draw(self.window.get_screen())
+		self.window.get_screen().fill(self.window.get_bg_colour())
+		self.gameworld.draw(self.window.get_screen(), self.draw_props)
 		pygame.display.flip()
 
 	# Handles all the input for the renderer
@@ -44,3 +55,7 @@ class update():
 			
 			if event.type == pygame.QUIT:
 				self.running = False
+
+		# set the offset
+		if pygame.mouse.get_pressed()[0] == True:
+			self.draw_props.offset = pygame.mouse.get_rel()

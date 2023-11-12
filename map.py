@@ -11,6 +11,6 @@ class map():
 		country_example = country("Australia")
 		self.countries.append(country_example)
 
-	def draw(self, screen):
+	def draw(self, screen, properties):
 		for country in self.countries:
-			country.draw(screen)
+			country.draw(screen, properties)

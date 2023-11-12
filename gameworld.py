@@ -9,5 +9,5 @@ class gameworld():
     def update(self):
         pass
 
-    def draw(self, screen):
-        self.map.draw(screen)
+    def draw(self, screen, properties):
+        self.map.draw(screen, properties)
