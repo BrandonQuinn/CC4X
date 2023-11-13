@@ -1,11 +1,9 @@
 from country import country
 
 class map():
-	name = ""
-	countries = []
-
 	def __init__(self, name):
 		self.name = name
+		self.countries = []
 		self.configure_defaults()
 
 	def update(self, clock, properties):

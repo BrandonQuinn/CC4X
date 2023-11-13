@@ -1,10 +1,8 @@
 from map import map
 
 class gameworld():
-    map = map("World")
-
-    def init(self):
-        pass
+    def __init__(self):
+        self.map = map("World")
 
     def update(self, clock, properties):
         self.map.update(clock, properties)

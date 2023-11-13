@@ -3,10 +3,9 @@ from area import area
 # Countries are made of areas which belong to that country
 # Each player players as 1 country
 class country():
-	name = ""
-	controlled_areas = []
-
 	def __init__(self, name):
+		self.name = ""
+		self.controlled_areas = []
 		self.name = name
 		self.configure_defaults()
 
@@ -32,11 +31,11 @@ class country():
 			kesch_area.add_point([150,90])
 			kesch_area.add_point([30,200])
 			
-			aktobe_area = area()
+			#aktobe_area = area()
 
 			self.controlled_areas.append(kraun_area)
 			self.controlled_areas.append(kesch_area)
-			self.controlled_areas.append(aktobe_area)
+			#self.controlled_areas.append(aktobe_area)
 			
 		if self.name == "Dunmay":
 			pass
