@@ -16,8 +16,8 @@ class map():
 	
 	# create default countries
 	def configure_defaults(self):
-		country_kershkustan = country("Kershkustan")
-		country_dunmay = country("Dunmark")
+		country_kershkustan = country("Syria")
+		country_dunmay = country("Denmark")
 
 		self.countries.append(country_kershkustan)
 		self.countries.append(country_dunmay)

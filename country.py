@@ -18,9 +18,9 @@ class country():
 		for area in self.controlled_areas:
 			area.draw(screen)
 
-	# Configure some default
+	# Configure some default countries
 	def configure_defaults(self):
-		if self.name == "Kershkustan":
+		if self.name == "Syria":
 			self.country_colour = (140, 100, 140)
 
 			kraun_area = area()
@@ -29,25 +29,28 @@ class country():
 			kraun_area.add_point([150,90])
 			kraun_area.add_point([-50,100])
 			kraun_area.set_colour(self.country_colour)
+			kraun_area.set_city_location([10, 20])
 
 			kesch_area = area()
 			kesch_area.add_point([-50,100])
 			kesch_area.add_point([150,90])
 			kesch_area.add_point([30,200])
 			kesch_area.set_colour(self.country_colour)
-			
+			kesch_area.set_city_location([30, 120])
+
 			aktobe_area = area()
 			aktobe_area.add_point([150,200])
 			aktobe_area.add_point([200,140])
 			aktobe_area.add_point([150,90])
 			aktobe_area.add_point([30,200])
 			aktobe_area.set_colour(self.country_colour)
+			aktobe_area.set_city_location([160, 150])
 
 			self.controlled_areas.append(kraun_area)
 			self.controlled_areas.append(kesch_area)
 			self.controlled_areas.append(aktobe_area)
 			
-		if self.name == "Dunmark":
+		if self.name == "Denmark":
 			self.country_colour = (100, 100, 140)
 
 			trusk_area = area()
@@ -55,7 +58,7 @@ class country():
 			trusk_area.add_point([450,-60])
 			trusk_area.add_point([430,120])
 			trusk_area.add_point([150,90])
-			trusk_area.set_city_location([250, 30]);
+			trusk_area.set_city_location([250, 30])
 			trusk_area.set_colour(self.country_colour)
 
 			kriln_area = area()
@@ -63,6 +66,7 @@ class country():
 			kriln_area.add_point([400,170])
 			kriln_area.add_point([200,140])
 			kriln_area.add_point([150,90])
+			kriln_area.set_city_location([182, 160])
 			kriln_area.set_colour(self.country_colour)
 
 			preck_area = area()
@@ -70,6 +74,7 @@ class country():
 			preck_area.add_point([250,270])
 			preck_area.add_point([150,200])
 			preck_area.add_point([200,140])
+			preck_area.set_city_location([250, 30])
 			preck_area.set_colour(self.country_colour)
 
 			self.controlled_areas.append(trusk_area)

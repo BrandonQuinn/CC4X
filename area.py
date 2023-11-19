@@ -10,18 +10,24 @@ class area():
 		self.city_location = [0, 0]
 
 	def draw(self, screen):
+		self.draw_area_background(screen)
 		self.draw_border(screen)
 		self.draw_city(screen)
 	
+	# draw the city
 	def draw_city(self, screen):
 		pygame.gfxdraw.filled_circle(screen, 
 			self.city_location[0], 
 			self.city_location[1], 
 			4, (0, 0, 0))
 
+	# Draw a border around the area
 	def draw_border(self, screen):
-		pygame.gfxdraw.filled_polygon(screen, self.shape, self.colour)
 		pygame.gfxdraw.aapolygon(screen, self.shape, (0, 0, 0))
+
+	# Draw the actual area background
+	def draw_area_background(self, screen):
+		pygame.gfxdraw.filled_polygon(screen, self.shape, self.colour)
 	
 	def update(self, clock, properties):
 		self.applyOffset(clock, properties)
